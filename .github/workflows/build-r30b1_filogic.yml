@@ -90,7 +90,9 @@ jobs:
         #[ -f $CONFIG_5G ] && cat $CONFIG_5G >> openwrt/.config
         [ -f $PLATFORM_FILE ] && cat $PLATFORM_FILE >> openwrt/.config
         [ -f $CONFIG_FILE ] && cat $CONFIG_FILE >> openwrt/.config
-        cp $GITHUB_WORKSPACE/r30b1/* openwrt/target/linux/mediatek/dts
+        cp "$GITHUB_WORKSPACE/r30b1/mt7981-clt-r30b1-112M.dts" openwrt/target/linux/mediatek/dts/mt7981-clt-r30b1-112M.dts
+        cp "$GITHUB_WORKSPACE/r30b1/mt7981-clt-r30b1.dts" openwrt/target/linux/mediatek/dts/mt7981-clt-r30b1.dts
+        cp "$GITHUB_WORKSPACE/r30b1/mt7981-clt-r30b1-base.dtsi" openwrt/target/linux/mediatek/dts/mt7981-clt-r30b1-base.dtsi.dts
         cd openwrt
         chmod +x $GITHUB_WORKSPACE/$INSTALL5G_SH && $GITHUB_WORKSPACE/$INSTALL5G_SH
         chmod +x $GITHUB_WORKSPACE/$SETTINGS_SH && $GITHUB_WORKSPACE/$SETTINGS_SH
